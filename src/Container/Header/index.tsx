@@ -11,7 +11,7 @@ const Header = styled.header`
   transition: top 0.5s ease 0s;
   background-color: rgb(255, 255, 255);
 `;
-const HeaderPage = () => {
+const HeaderPage: React.FC = () => {
   return (
     <Header>
       <NavBar />
