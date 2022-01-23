@@ -1,36 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as AccountIcon } from '../../assets/img/accountIcon.svg';
 
-interface IVisibility {
+interface iProps {
   visibility: boolean;
   listItem: any;
+  icon?: React.ReactComponentElement<any>;
 }
 interface IShow {
   show: boolean;
 }
-const AccountWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0px 20px;
-  color: rgba(4, 17, 29, 0.75);
-  transition: 0.2s;
-  position: relative;
-  :hover {
-    color: rgb(4, 17, 29);
-  }
-`;
-const AccountIconStyle = styled(AccountIcon)`
-  cursor: pointer;
-  transition: 0.2s;
-  :hover {
-    opacity: 0.8;
-  }
-`;
+
 /*  */
 const MenuList = styled.ul<IShow>`
   visibility: ${({ show }) => (!show ? 'hidden' : 'visible')};
-  position: fixed;
+  position: absolute;
   margin: 0px;
   list-style: none;
   border: 1px solid rgb(229, 232, 235);
@@ -45,24 +28,35 @@ const MenuList = styled.ul<IShow>`
   max-width: initial;
   min-width: 220px;
   padding: 0;
-  transition: 0.2s;
+  transition: 0.1s;
+  max-height: 640px;
 `;
 const MenuListItem = styled.li`
-  width:100%
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
   font-weight: 600;
-  padding: 16px;
-  cursor:pointer;
+  padding: 18px;
+  cursor: pointer;
+  &:not(:last-child) {
+    border-bottom: 1px solid rgb(229, 232, 235);
+  }
   &:hover {
-    transition: all 0.2s ease 0s;
+    transition: all 0.1s ease 0s;
     box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
     background-color: rgb(251, 253, 255);
   }
 `;
-const Menu: React.FC<IVisibility> = ({ visibility, listItem }) => {
+
+const Menu: React.FC<iProps> = ({ visibility, listItem, icon }) => {
   return (
     <MenuList show={visibility}>
       {listItem.map((item: string) => (
-        <MenuListItem>{item}</MenuListItem>
+        <MenuListItem>
+          {icon}
+          {item}
+        </MenuListItem>
       ))}
     </MenuList>
   );

@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as SearchIcon } from '../../assets/img/searchIcon.svg';
 
-interface IFocus {
+interface iFocus {
   focus: boolean;
 }
-const SearchBlock = styled.div<IFocus>`
+const SearchBlock = styled.div<iFocus>`
   cursor: text;
   display: flex;
   background-color: rgb(255, 255, 255);
@@ -33,7 +33,7 @@ const SearchInput = styled.input`
   }
 `;
 
-const Search = () => {
+const Search: React.FC = () => {
   const [focus, setFocus] = React.useState<boolean>(false);
   const toggleFocus = (boo: boolean): void => setFocus(boo);
   return (

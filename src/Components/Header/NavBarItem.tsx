@@ -1,11 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
-import Account from './Account';
+import Menu from './Menu';
 
-const NavBarList = styled.ul`
-  display: flex;
-  margin: 0px;
-  list-style: none;
-  padding: 0;
+interface iProps {
+  menuItem: string;
+  subMenuItem?: string[];
+  icon?: React.ReactComponentElement<any>;
+}
+const NavBarListItemWrapper = styled.div`
+  position: relative;
 `;
 const NavBarListItem = styled.li`
   align-items: center;
@@ -14,7 +17,7 @@ const NavBarListItem = styled.li`
   height: 80px;
   justify-content: space-between;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   flex-shrink: 0;
   padding: 0px 20px;
   color: rgba(4, 17, 29, 0.75);
@@ -23,15 +26,17 @@ const NavBarListItem = styled.li`
     color: rgb(4, 17, 29);
   }
 `;
-const NavBarItem: React.FC = () => {
-  const navItem = ['Explore', 'Stats', 'Resources', 'Create'];
+const NavBarItem: React.FC<iProps> = ({ menuItem, subMenuItem, icon }) => {
+  const [visible, setVisible] = React.useState<boolean>(false);
+  const toggleVisibility = (boo: boolean) => setVisible(boo);
+
   return (
-    <NavBarList>
-      {navItem.map((item) => (
-        <NavBarListItem key={item}>{item}</NavBarListItem>
-      ))}
-      <Account />
-    </NavBarList>
+    <NavBarListItemWrapper
+      onMouseEnter={() => toggleVisibility(true)}
+      onMouseLeave={() => toggleVisibility(false)}>
+      <NavBarListItem>{menuItem}</NavBarListItem>
+      {subMenuItem && <Menu listItem={subMenuItem} visibility={visible} icon={icon} />}
+    </NavBarListItemWrapper>
   );
 };
 export default NavBarItem;

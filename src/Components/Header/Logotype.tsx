@@ -20,7 +20,7 @@ const LinlMainPage = styled.a`
 const LogoTextStyle = styled(LogoText)`
   margin: 4px 0 0 10px;
 `;
-const Logotype = () => {
+const Logotype: React.FC = () => {
   return (
     <Logo>
       <LinlMainPage href="/">

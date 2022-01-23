@@ -25,12 +25,13 @@ const AccountIconStyle = styled(AccountIcon)`
 const Account: React.FC = () => {
   const [visible, setVisible] = React.useState<boolean>(false);
   const toggleVisibility = (boo: boolean) => setVisible(boo);
+  const accountItem = ['Profile', 'Favorites', 'My Collections', 'Settings', 'Hight Mode'];
   return (
     <AccountIconWrapper
       onMouseEnter={() => toggleVisibility(true)}
       onMouseLeave={() => toggleVisibility(false)}>
       <AccountIconStyle />
-      <Menu visibility={visible} listItem={['test', 'test2']} />
+      <Menu visibility={visible} listItem={accountItem} />
     </AccountIconWrapper>
   );
 };
