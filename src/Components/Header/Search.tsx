@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as SearchIcon } from '../../assets/img/searchIcon.svg';
+import { iFocus } from './types';
 
-interface iFocus {
-  focus: boolean;
-}
 const SearchBlock = styled.div<iFocus>`
   cursor: text;
   display: flex;

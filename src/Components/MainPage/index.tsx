@@ -220,20 +220,8 @@ const ProgressBarAudio = styled.input`
     background: var(--selectedKnobby);
   }
 `;
-const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-  const audioRef = React.useRef<HTMLMediaElement>(null);
-  const [duration, setDuration] = React.useState<number>(0);
-  const [currentTime, setCurrentTime] = React.useState<number>(0);
-  const volumeBar = React.useRef<HTMLInputElement>(null);
-  const [volume, setVolume] = React.useState<number>(1);
-  const [mute, setMute] = React.useState<boolean>(false);
-  const progressBar = React.useRef<HTMLInputElement>(null);
-  const animationRef = React.useRef<any>(null);
-
-  const [currentTrack, setCurrentTrack] = React.useState<number>(0);
-
+const MainPage = () => {
   return <h1>KEK</h1>;
 };
 
-export default AudioPlayer;
+export default MainPage;

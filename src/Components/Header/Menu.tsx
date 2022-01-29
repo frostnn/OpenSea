@@ -1,16 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IShow, iMenu } from './types';
 
-interface iProps {
-  visibility: boolean;
-  listItem: any;
-  icon?: React.ReactComponentElement<any>;
-}
-interface IShow {
-  show: boolean;
-}
-
-/*  */
 const MenuList = styled.ul<IShow>`
   visibility: ${({ show }) => (!show ? 'hidden' : 'visible')};
   position: absolute;
@@ -49,7 +40,7 @@ const MenuListItem = styled.li`
   }
 `;
 
-const Menu: React.FC<iProps> = ({ visibility, listItem, icon }) => {
+const Menu: React.FC<iMenu> = ({ visibility, listItem, icon }) => {
   return (
     <MenuList show={visibility}>
       {listItem.map((item: string) => (
