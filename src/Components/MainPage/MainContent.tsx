@@ -112,6 +112,7 @@ const MainContent: React.FC<iMainContent> = ({ title, subTitle }) => {
             <Card img={img} titleImg={'Life as is #18'} author={'naibovisuals'} authorIcon={icon} />
           </RightContent>
         </Container>
+        <h1>TEST</h1>
       </Wrapper>
     </>
   );
