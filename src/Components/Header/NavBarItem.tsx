@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
+import { iNavBarItem } from './types';
 
-interface iProps {
-  menuItem: string;
-  subMenuItem?: string[];
-  icon?: React.ReactComponentElement<any>;
-}
 const NavBarListItemWrapper = styled.div`
   position: relative;
 `;
@@ -26,7 +22,7 @@ const NavBarListItem = styled.li`
     color: rgb(4, 17, 29);
   }
 `;
-const NavBarItem: React.FC<iProps> = ({ menuItem, subMenuItem, icon }) => {
+const NavBarItem: React.FC<iNavBarItem> = ({ menuItem, subMenuItem, icon }) => {
   const [visible, setVisible] = React.useState<boolean>(false);
   const toggleVisibility = (boo: boolean) => setVisible(boo);
 

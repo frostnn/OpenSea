@@ -5,12 +5,8 @@ import Logotype from './Logotype';
 import NavBarItem from './NavBarItem';
 import Search from './Search';
 import { ReactComponent as ArtIcon } from '../../assets/menuIcon/artIcon.svg';
+import { iNavItems } from './types';
 
-export interface iNavItems {
-  menuItem: string;
-  subMenuItem?: string[];
-  icon?: React.ReactComponentElement<any>;
-}
 const HeaderNavBar = styled.nav`
   display: flex;
   height: 100%;
@@ -79,11 +75,10 @@ const NavBar: React.FC = () => {
       ],
       icon: <ArtIconStyle />,
     },
-    { menuItem: 'Stats', subMenuItem: ['Ranking', 'Activity'], icon: <ArtIconStyle /> },
+    { menuItem: 'Stats', subMenuItem: ['Ranking', 'Activity'] },
     {
       menuItem: 'Resources',
       subMenuItem: ['Blog', 'Partners', 'Docs', 'Help Center', 'Platform Status', 'Newletter'],
-      icon: <ArtIconStyle />,
     },
     { menuItem: 'Create' },
   ];

@@ -1,14 +1,11 @@
-import styled from 'styled-components';
-
-const NavBar = styled.div`
-  width: 300px;
-  min-height: 90vh;
-  background: #fff;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-`;
+import MainContent from '../../Components/MainPage/MainContent';
 
 const MainPage = () => {
-  return <h2>MAIN PAGE</h2>;
+  return (
+    <MainContent
+      title={'Discover, collect, and sell extraordinary NFTs'}
+      subTitle={`OpenSea is the world's first and largest NFT marketplace`}
+    />
+  );
 };
 export default MainPage;
