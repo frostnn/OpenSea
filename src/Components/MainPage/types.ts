@@ -10,6 +10,8 @@ export interface iMainContentCard {
   author: string;
   authorIcon: string;
   img: string;
+  test: {  authorIcon: string;
+    img: string;}
 }
 export interface iBg {
   bg: string;

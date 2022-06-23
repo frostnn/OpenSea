@@ -114,6 +114,7 @@ const InfoIconStyle = styled(InfoIcon)`
 const Card: React.FC<iMainContentCard> = ({ titleImg, author, authorIcon, img }) => {
   return (
     <Container>
+      <div>TEST</div>
       <CardContent>
         <CardContentImg>
           <Img src={img} />
